@@ -1,0 +1,102 @@
+apps/v1/Deployment app-deploy                                                 💥
+    [CRITICAL] Container Ephemeral Storage Request and Limit
+        · springboot-app -> Ephemeral Storage limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.ephemeral-storage
+    [CRITICAL] Pod Probes
+        · Container is missing a readinessProbe
+            A readinessProbe should be used to indicate when the service is
+            ready to receive traffic. Without it, the Pod is risking to receive
+            traffic before it has booted. It's also used during rollouts, and
+            can prevent downtime if a new version of the application is failing.
+            More information: https://github.com/zegl/kube-score/blob/master/README_PROBES.md
+    [CRITICAL] Pod NetworkPolicy
+        · The pod does not have a matching NetworkPolicy
+            Create a NetworkPolicy that targets this pod to control who/what
+            can communicate with this pod. Note, this feature needs to be
+            supported by the CNI implementation used in the Kubernetes cluster
+            to have an effect.
+    [CRITICAL] Container Resources
+        · springboot-app -> CPU limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.cpu
+        · springboot-app -> Memory limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.memory
+        · springboot-app -> CPU request is not set
+            Resource requests are recommended to make sure that the application
+            can start and run without crashing. Set resources.requests.cpu
+        · springboot-app -> Memory request is not set
+            Resource requests are recommended to make sure that the application
+            can start and run without crashing. Set resources.requests.memory
+    [CRITICAL] Container Image Pull Policy
+        · springboot-app -> ImagePullPolicy is not set to Always
+            It's recommended to always set the ImagePullPolicy to Always, to
+            make sure that the imagePullSecrets are always correct, and to
+            always get the image you want.
+    [CRITICAL] Container Security Context User Group ID
+        · springboot-app -> Container has no configured security context
+            Set securityContext to run the container in a more secure context.
+    [CRITICAL] Container Security Context ReadOnlyRootFilesystem
+        · springboot-app -> Container has no configured security context
+            Set securityContext to run the container in a more secure context.
+    [CRITICAL] Deployment has PodDisruptionBudget
+        · No matching PodDisruptionBudget was found
+            It's recommended to define a PodDisruptionBudget to avoid
+            unexpected downtime during Kubernetes maintenance operations, such
+            as when draining a node.
+    [WARNING] Deployment has host PodAntiAffinity
+        · Deployment does not have a host podAntiAffinity set
+            It's recommended to set a podAntiAffinity that stops multiple pods
+            from a deployment from being scheduled on the same node. This
+            increases availability in case the node becomes unavailable.
+apps/v1/Deployment app-deploy in default                                      💥
+    [CRITICAL] Pod NetworkPolicy
+        · The pod does not have a matching NetworkPolicy
+            Create a NetworkPolicy that targets this pod to control who/what
+            can communicate with this pod. Note, this feature needs to be
+            supported by the CNI implementation used in the Kubernetes cluster
+            to have an effect.
+    [CRITICAL] Container Resources
+        · springboot-app -> CPU limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.cpu
+        · springboot-app -> Memory limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.memory
+        · springboot-app -> CPU request is not set
+            Resource requests are recommended to make sure that the application
+            can start and run without crashing. Set resources.requests.cpu
+        · springboot-app -> Memory request is not set
+            Resource requests are recommended to make sure that the application
+            can start and run without crashing. Set resources.requests.memory
+    [CRITICAL] Container Image Pull Policy
+        · springboot-app -> ImagePullPolicy is not set to Always
+            It's recommended to always set the ImagePullPolicy to Always, to
+            make sure that the imagePullSecrets are always correct, and to
+            always get the image you want.
+    [CRITICAL] Container Security Context User Group ID
+        · springboot-app -> The container is running with a low user ID
+            A userid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsUser to a value > 10000
+        · springboot-app -> The container running with a low group ID
+            A groupid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsGroup to a value > 10000
+    [CRITICAL] Container Security Context ReadOnlyRootFilesystem
+        · springboot-app -> Container has no configured security context
+            Set securityContext to run the container in a more secure context.
+    [CRITICAL] Pod Probes
+        · Container is missing a readinessProbe
+            A readinessProbe should be used to indicate when the service is
+            ready to receive traffic. Without it, the Pod is risking to receive
+            traffic before it has booted. It's also used during rollouts, and
+            can prevent downtime if a new version of the application is failing.
+            More information: https://github.com/zegl/kube-score/blob/master/README_PROBES.md
+    [CRITICAL] Container Ephemeral Storage Request and Limit
+        · springboot-app -> Ephemeral Storage limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.ephemeral-storage
+networking.k8s.io/v1/Ingress springboot-ingress                               ✅
+networking.k8s.io/v1/Ingress springboot-ingress in default                    ✅
+v1/Service springboot-service                                                 ✅
+v1/Service springboot-service in default                                      ✅
